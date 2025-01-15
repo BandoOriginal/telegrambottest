@@ -3,7 +3,7 @@ const PORT = process.env.PORT || 4040;
 const { handler } = require("./controller")
 //Iniciamos la aplicacion EXPRESS
 const app = express();
-app.arguments(express.json())
+app.use(express.json())
 //Rutas de la API
 app.post("*", async (req, res) => {
   console.log(req.body)
