@@ -1,18 +1,19 @@
 const express = require("express");
 const PORT = process.env.PORT || 4040;
+const { handler } = require("./controller")
 //Iniciamos la aplicacion EXPRESS
 const app = express();
 
 //Rutas de la API
-app.post("*", (req, res) => {
+app.post("*", async (req, res) => {
   console.log(req.body)
   console.log("Si se hizo POST")
-  res.send("Hello Post")
+  res.send(await handler(req))
 })
-app.get("*", (req, res) => {
+app.get("*", async (req, res) => {
   console.log(req.body)
   console.log("Si se hizo GET")
-  res.send("Hello GET")
+  res.send(await handler(req))
 })
 
 //Abrimos Puertos
