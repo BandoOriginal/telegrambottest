@@ -1,15 +1,18 @@
 const express = require("express");
+const PORT = process.env.PORT || 4040;
+//Iniciamos la aplicacion EXPRESS
 const app = express();
-const port = process.env.PORT || 4040;
-app.use(express.json());
-app.post("*", async (req, res) => {
-  res.send("Hello Post")
-});
-app.get("*", async (req, res) => {
-  res.send("Hello Get")
+
+//Rutas de la API
+app.post("*", (req, res) => {
+  res.send("Hello POST")
+})
+app.get("*", (req, res) => {
+  res.send("Hello GET")
 })
 
+//Abrimos Puertos
 app.listen(PORT, function (err) {
   if(err) console.log(err);
   console.log("Server listening on PORT; ", PORT)
-})
+});
