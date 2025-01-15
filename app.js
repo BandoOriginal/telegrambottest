@@ -5,9 +5,11 @@ const app = express();
 
 //Rutas de la API
 app.post("*", (req, res) => {
-  res.send("Hello POST")
+  console.log(req.body)
+  res.send("Hello Post")
 })
 app.get("*", (req, res) => {
+  console.log(req.body)
   res.send("Hello GET")
 })
 
