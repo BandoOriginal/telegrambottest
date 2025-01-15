@@ -5,24 +5,27 @@ function sendMessage(messageObj, messageText) {
         text: messageText,
     });
 }
-
 function handleMessage(messageObj) {
+    // Verificamos si messageObj está definido y es un objeto
+    if (!messageObj || typeof messageObj !== 'object') {
+        return sendMessage(null, 'Invalid message object.');
+    }
+
     const messageText = messageObj.text || "";
 
-    if (messageText.charAt(0) === "/"){
+    if (messageText.charAt(0) === "/") {
         const command = messageText.substr(1);
 
         switch (command) {
             case "start":
                 return sendMessage(
                     messageObj,
-                    "Hi I'm Bando's first bot ^w^ how can i help you?"
+                    "Hi I'm Bando's first bot ^w^ how can I help you?"
                 );
             default:
-                return sendMessage(messageObj, 'Sorry i dont know that command use "/help" to get command list')
+                return sendMessage(messageObj, 'Sorry, I don\'t know that command. Use "/help" to get command list.');
         }
-
-    }else{
+    } else {
         return sendMessage(messageObj, messageText);
     }
 }
