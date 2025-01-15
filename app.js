@@ -8,12 +8,14 @@ app.use(express.json())
 app.post("*", async (req, res) => {
   console.log(req.body)
   console.log("Si se hizo POST")
-  res.send(await handler(req))
+  res.send("Hola")
+  //res.send(await handler(req))
 })
 app.get("*", async (req, res) => {
   console.log(req.body)
   console.log("Si se hizo GET")
-  res.send(await handler(req))
+  res.send("Hola")
+  //res.send(await handler(req))
 })
 
 //Abrimos Puertos
