@@ -3,7 +3,7 @@ function sendMessage(messageObj, messageText) {
     return axiosInstance.get("sendMessage", {
         chat_id: messageObj.chat.id,
         text: messageText,
-    })
+    });
 }
 
 function handleMessage(messageObj) {
@@ -11,7 +11,7 @@ function handleMessage(messageObj) {
 
     if (messageText.charAt(0) === "/"){
         const command = messageText.substr(1);
-        
+
         switch (command) {
             case "start":
                 return sendMessage(

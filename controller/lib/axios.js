@@ -11,7 +11,7 @@ function getAxiosInstance(){
                 params,
             });
         },
-        post(method, params) {
+        post(method, data) {
             return axios({
                 method: "post",
                 baseURL: BASE_URL,
