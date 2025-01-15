@@ -8,7 +8,7 @@ function sendMessage(messageObj, messageText) {
 function handleMessage(messageObj) {
     // Verificamos si messageObj está definido y es un objeto
     if (!messageObj || typeof messageObj !== 'object') {
-        return sendMessage(null, 'Invalid message object.');
+        return;
     }
 
     const messageText = messageObj.text || "";
