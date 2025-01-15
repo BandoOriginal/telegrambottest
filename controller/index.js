@@ -2,9 +2,11 @@ const { handleMessage } = require("./lib/Telegram")
 
 async function handler(req, method) {
     const { body } = req;
-    const messageObj = body.message;
-    await handleMessage(messageObj);
+    if(body){
+        const messageObj = body.message;
+        await handleMessage(messageObj);
+    }
+    return;
 }
-return;
 
 module.exports = { handler }
