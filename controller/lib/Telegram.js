@@ -7,7 +7,7 @@ function sendMessage(messageObj, messageText) {
 }
 function handleMessage(messageObj) {
     // Verificamos si messageObj está definido y es un objeto
-    const messageText = "";
+    var messageText;
     if (!messageObj || typeof messageObj !== 'object') {
         return;
     }
