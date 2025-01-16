@@ -25,6 +25,14 @@ function handleMessage(messageObj) {
                     messageObj,
                     "Hi I'm Bando's first bot ^w^ how can I help you?"
                 );
+            case "help":
+                return sendMessage(
+                    messageObj,
+                    `Commands:
+                    /start (Starts the bot service)
+                    /help  (Displays information)
+                    /proximamente`
+                )
             default:
                 return sendMessage(messageObj, 'Sorry, I don\'t know that command. Use "/help" to get command list.');
         }
