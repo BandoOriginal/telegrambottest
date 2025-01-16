@@ -7,11 +7,12 @@ function sendMessage(messageObj, messageText) {
 }
 function handleMessage(messageObj) {
     // Verificamos si messageObj está definido y es un objeto
+    const messageText = "";
     if (!messageObj || typeof messageObj !== 'object') {
         return;
     }
     try {
-        const messageText = messageObj.text || "";
+        messageText = messageObj.text || "";
     } catch (error) {
         return;
     }
