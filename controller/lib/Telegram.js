@@ -14,7 +14,7 @@ function handleMessage(messageObj) {
     try {
         messageText = messageObj.text || "";
     } catch (error) {
-        console.log("error")
+        console.log(error)
         return;
     }
 
