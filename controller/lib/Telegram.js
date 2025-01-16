@@ -10,8 +10,11 @@ function handleMessage(messageObj) {
     if (!messageObj || typeof messageObj !== 'object') {
         return;
     }
-
-    const messageText = messageObj.text || "";
+    try {
+        const messageText = messageObj.text || "";
+    } catch (error) {
+        return;
+    }
 
     if (messageText.charAt(0) === "/") {
         const command = messageText.substr(1);
